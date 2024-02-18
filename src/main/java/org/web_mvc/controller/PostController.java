@@ -9,7 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
-    public static final String APPLICATION_JSON = "application/json";
     private final PostService service;
 
     public PostController(PostService service) {
