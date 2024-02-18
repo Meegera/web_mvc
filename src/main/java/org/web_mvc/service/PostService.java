@@ -3,6 +3,7 @@ package org.web_mvc.service;
 import org.springframework.stereotype.Service;
 import org.web_mvc.exception.NotFoundException;
 import org.web_mvc.model.Post;
+import org.web_mvc.model.PostDTO;
 import org.web_mvc.repository.PostRepository;
 
 import java.util.List;
@@ -15,15 +16,15 @@ public class PostService {
         this.repository = repository;
     }
 
-    public List<Post> all() {
+    public List<PostDTO> all() {
         return repository.all();
     }
 
-    public Post getById(long id) {
+    public PostDTO getById(long id) {
         return repository.getById(id).orElseThrow(NotFoundException::new);
     }
 
-    public Post save(Post post) {
+    public PostDTO save(Post post) {
         return repository.save(post);
     }
 
